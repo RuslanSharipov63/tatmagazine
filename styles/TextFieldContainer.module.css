@@ -1,0 +1,30 @@
+.containerAdmin {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 60%;
+  margin-top: 10px;
+  margin-left: 5px;
+  height: auto;
+}
+
+.containerformstext {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 60%;
+  height: 850px;
+  padding: 2%;
+}
+
+.containerformphoto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 40%;
+  height: 850px;
+  padding: 2%;
+}
