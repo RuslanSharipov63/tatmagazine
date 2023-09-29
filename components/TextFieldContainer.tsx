@@ -59,14 +59,35 @@ const TextFieldContainer = () => {
       namePhoto: "",
     },
   });
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState({
+    mainphoto: {
+      name: '',
+      photoBlob: null
+    },
+    photo1: {
+      name: '',
+      photoBlob: null,
+    },
+    photo2: {
+      name: '',
+      photoBlob: null,
+    },
+    photo3: {
+      name: '',
+      photoBlob: null,
+    },
+    photo4: {
+      name: '',
+      photoBlob: null,
+    }
+  });
   const [preView, setPreView] = useState("");
 
   const handleChange = (e: any) => {
-    setSelectedFile(e.target.files[0]),
-      setPreView(URL.createObjectURL(e.target.files[0]));
+    setSelectedFile({ ...selectedFile, [e.target.name]: { name: e.target.files[0].name, photoBlob: e.target.files[0] } });
+      /* setPreView(URL.createObjectURL(e.target.files[0])); */
   };
-
+console.log(selectedFile)
   const handle = (
     e:
       | React.ChangeEvent<HTMLInputElement>
@@ -77,14 +98,16 @@ const TextFieldContainer = () => {
     dispatch(handleChangeAction({ item, value }));
   };
 
-const addPhotoWithSignature = (e: React.ChangeEvent<HTMLInputElement>) => {
-   setSignaturePhoto({...signaturePhoto, [e.target.name]: {
-    [e.target.name]: e.target.files[0],
-    
-  }}) 
-}
+  const addPhotoWithSignature = (e: React.ChangeEvent<HTMLInputElement>) => {
+    /* setSignaturePhoto({
+      ...signaturePhoto, [e.target.name]: {
+        [e.target.name]: e.target.files[0],
 
-  const addPhoto = () => {};
+      } 
+    })*/
+  }
+
+  const addPhoto = () => { };
   return (
     <div className={styles.containerAdmin}>
       <div className={styles.containerformstext}>
